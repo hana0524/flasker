@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>こんにちは</h1>
+
+  {% if session.logged_in %}
+
+<h1>MeMo-Sta</h1>
+
+    <form action="{{ url_for('add_entry') }}" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label class="col-sm-2 control-label"><h3>タイトル</h3></label>
+          <div><input type="text" class="form-control" size=40 name="title"></div>
+        </div>
+        <div>
+          <label class="col-sm-2 control-label"><h3>本文</h3></label>
+          <div><textarea name="text" rows=8 cols=40></textarea></div>
+        </div><br>
+
+        <div class="form-group">
+        <button type="submit" class="btn btn-primary">
+          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 追加</button></div>
+    </form>
+
+
+    <form method="post" action="{{ url_for('photo') }}" enctype="multipart/form-data">
+      <div class="form-group">
+        <label class="col-sm-2 control-label"><h3>画像</h3></label>
+        <div><input type="file" id="img_file" name="img_file" class="col-sm-4"></div>
+      </div><br>
+      <div><button type="submit" class="btn btn-primary">
+          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 送信</button></div>
+    </form>
+<br>
+    <form method="get" action="{{ url_for('photo') }}" enctype="multipart/form-data">
+      <div><button type="submit" class="btn btn-primary">
+        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 画像一覧</button></div>
+    </form>
+  ↑未完成
+
+  {% endif %}
+
+<br>
+
+
+  <tr class="entries">
+  {% for entry in entries %}
+    <table border="1",align="center">
+      <tr><th><h3>{{ entry.id }}</h3></th></tr>
+      <tr><th><h3 id="{{ entry.id }}">{{ entry.title }}</h3></th></tr>
+      <tr><td><h5>{{ entry.text|safe }}</h5></td></tr>
+
+      <tr><td>
+      <form action="{{ url_for('delete_entry',post_id = entry.id) }}" method="POST">
+       <div><button type="submit" class="btn btn-primary">
+          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 削除</button></div>
+      </form>
+
+      <form action="{{ url_for('delete_entry',post_id = entry.id) }}" method="GET">
+          <div><button type="submit" class="btn btn-primary">
+          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 編集</button></div>
+      </form>
+      </td></tr>
+
+      <br>
+
+    {% else %}
+      <th>現在、投稿はありません。</th>
+  {% endfor %}
+  </tr>
+</table>
+<br>
+
+
+{% endblock body%}
