@@ -1,15 +1,15 @@
 {% extends "layout.html" %}
-{% block body %}
+{% block content %}
   <h2>ログイン</h2>
   {% if error %}<p class="error"><strong>エラー:</strong> {{ error }}{% endif %}
   <form action="{{ url_for('login') }}" method="post" enctype="multipart/form-data">
     <div>
       <label class="col-sm-2 control-label">ユーザ名</label>
-      <div><input type="text" class="form-control" size=30 name="username"></div>
+      <div><input type="text" class="form-control" size=10 name="username"></div>
     </div>
     <div>
       <label class="col-sm-2 control-label">パスワード</label>
-      <div><input type="password" name="password"></div>
+      <div><input type="password" class="form-control" size=10 name="password"></div>
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-primary">
