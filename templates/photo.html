@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
+{% block content %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,11 +7,19 @@
 </head>
 <body>
 
+<h4>現在投稿はありません。</h4>
+
 {% for photo in img_file %}
-<p><img src="{% media 'img_file' %}"></p>
+<p><img src=" peki.png "></p>
 {% else %}
 {% endfor %}
+
+    <form method="get" action="{{ url_for('show') }}" enctype="multipart/form-data">
+      <div><button type="submit" class="btn btn-primary">
+        <span class="glyphicon" aria-hidden="true"></span> 戻る</button></div>
+    </form>
 
 
 </body>
 </html>
+{% endblock %}

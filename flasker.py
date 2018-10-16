@@ -2,7 +2,7 @@
 import os
 import sqlite3
 from contextlib import closing
-from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
+from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash, send_from_directory
 from werkzeug import secure_filename
 
 DATABASE = 'sample.db'
@@ -71,6 +71,7 @@ def add_entry():
         abort(401)
     g.db.execute('insert into entries (title, text) values (?, ?)',
                  [request.form['title'], request.form['text']])
+
     g.db.commit()
     flash(u'投稿が追加されました')
     return redirect(url_for('show'))
@@ -85,11 +86,28 @@ def delete_entry(post_id):
         print("erro")
     return redirect(url_for('show'))
 
+@app.route('/edit/<int:post_id>',methods=['GET','POST'])
+def edit(post_id):
+    if request.method == 'GET':
+        target = post_id
+        return render_template('edit.html', post_id = target)
+    if request.method == 'POST':
+        g.db.execute('update entries set title= ?,text= ? where id = ?',
+                     ([request.form['title'], request.form['text'],post_id]))
+        g.db.commit()
+    return redirect(url_for('show'))
+
+
 
 # 画像アップロード
 @app.route('/photo', methods=['GET', 'POST'])
 def photo():
     if request.method == 'POST':
+        if not session.get('logged_in'):
+            abort(401)
+        g.db.execute('insert into photos (photo) values (?)',
+                     [request.form['img_file']])
+        g.db.commit()
         img_file = request.files['img_file']
         if img_file and allowed_file(img_file.filename):
             filename = secure_filename(img_file.filename)
@@ -98,11 +116,15 @@ def photo():
             return render_template('show.html', img_url=img_url)
 
     elif request.method == 'GET':
-        return render_template('photo.html')
+        media = UPLOAD_FOLDER
+        return render_template('photo.html',media = media)
 
     else:
         return redirect(url_for('menu'))
 
+@app.route('/uploads/<filename>')
+def uploaded_file(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 # ログイン
 @app.route('/login', methods=['GET', 'POST'])

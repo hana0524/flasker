@@ -5,32 +5,33 @@
   {% if session.logged_in %}
     <div class="panel panel-info">
     <form action="{{ url_for('add_entry') }}" method="post" enctype="multipart/form-data">
-        <div>
-          <label class="col-sm-2 control-label"><h3>タイトル</h3></label>
-          <div><input type="text" class="form-control" name="title"></div>
+        <div class="form-group">
+          <label for="title"><h4>タイトル</h4></label>
+          <input type="text" class="form-control" name="title">
         </div>
-        <div>
-          <label class="col-sm-2 control-label"><h3>本文</h3></label>
-          <div><textarea name="text" class="form-control" rows=8></textarea></div>
-        </div><br>
-
+        <div class="form-group">
+          <label for="text"><h4>本文</h4></label>
+          <textarea name="text" class="form-control" rows=8></textarea>
+        </div>
         <div class="form-group">
         <button type="submit" class="btn btn-primary">
-          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 追加</button></div>
+          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 投稿</button></div>
     </form>
     </div>
 
     <div class="panel panel-info">
     <form method="post" action="{{ url_for('photo') }}" enctype="multipart/form-data">
       <div class="form-group">
-        <label class="col-sm-2 control-label"><h3>画像</h3></label>
-        <div><input type="file" id="img_file" name="img_file" class="col-sm-4"></div>
-      </div><br>
-      <div><button type="submit" class="btn btn-primary">
-          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 送信</button></div>
+        <label for="img_file"><h4>画像</h4></label>
+        <input type="file" id="img_file" name="img_file" class="col-sm-4">
+      </div>
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary">
+          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 送信</button>
+      </div>
     </form>
     </div>
-<br>
+
     <form method="get" action="{{ url_for('photo') }}" enctype="multipart/form-data">
       <div><button type="submit" class="btn btn-primary">
         <span class="glyphicon" aria-hidden="true"></span> 画像一覧</button></div>
@@ -40,32 +41,39 @@
 
 <br>
 
-
+<div class="panel panel-primary" align="center">
   <tr class="entries">
   {% for entry in entries %}
-    <table border="1",align="center">
-      <tr><th><h3>{{ entry.id }}</h3></th></tr>
+    <table border="1">
+            <tr><th><h3 align="center">{{ entry.id }}</h3></th></tr>
       <tr><th><h3 id="{{ entry.id }}">{{ entry.title }}</h3></th></tr>
       <tr><td><h5>{{ entry.text|safe }}</h5></td></tr>
 
+        <div class="btn-toolbar">
       <tr><td>
+          <div class="btn-group">
       <form action="{{ url_for('delete_entry',post_id = entry.id) }}" method="POST">
-       <div><button type="submit" class="btn btn-danger">
-          <span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span> 削除</button></div>
+       <button type="submit" class="btn btn-danger">
+          <span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span> 削除</button>
       </form>
-
-      <form action="{{ url_for('delete_entry',post_id = entry.id) }}" method="GET">
-          <div><button type="submit" class="btn btn-success">
-          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 編集</button></div>
+          </div>
+          <div class="btn-group">
+      <form action="{{ url_for('edit',post_id = entry.id,title = entry.title,text = entry.text) }}" method="GET">
+          <button type="submit" class="btn btn-success">
+          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 編集</button>
       </form>
+          </div>
       </td></tr>
-
+        </div>
       <br>
 
     {% else %}
+
       <th>現在、投稿はありません。</th>
+
   {% endfor %}
   </tr>
 </table>
+  </div>
 <br>
 {% endblock %}
