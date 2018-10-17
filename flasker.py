@@ -86,37 +86,34 @@ def delete_entry(post_id):
         print("erro")
     return redirect(url_for('show'))
 
-@app.route('/edit/<int:post_id>',methods=['GET','POST'])
+@app.route('/edit_show/<int:post_id>',methods=['POST'])
+def edit_show(post_id):
+    target = post_id
+    return render_template('edit.html',post_id = target)
+
+@app.route('/edit/<int:post_id>',methods=['POST'])
 def edit(post_id):
-    if request.method == 'GET':
-        target = post_id
-        return render_template('edit.html', post_id = target)
-    if request.method == 'POST':
-        g.db.execute('update entries set title= ?,text= ? where id = ?',
-                     ([request.form['title'], request.form['text'],post_id]))
-        g.db.commit()
+    g.db.execute('update entries set title= ?,text= ? where id = ?',
+                ([request.form['title'], request.form['text'],post_id]))
+    g.db.commit()
     return redirect(url_for('show'))
 
 
 
 # 画像アップロード
-@app.route('/photo', methods=['GET', 'POST'])
-def photo():
+@app.route('/image_entry', methods=['GET', 'POST'])
+def image_entry():
     if request.method == 'POST':
         if not session.get('logged_in'):
             abort(401)
-        g.db.execute('insert into photos (photo) values (?)',
-                     [request.form['img_file']])
-        g.db.commit()
-        img_file = request.files['img_file']
-        if img_file and allowed_file(img_file.filename):
-            filename = secure_filename(img_file.filename)
-            img_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            img_url = '/uploads/' + filename
-            return render_template('show.html', img_url=img_url)
-
+            img_file = request.files['img_file']
+            if img_file and allowed_file(img_file.filename):
+                filename = secure_filename(img_file.filename)
+                img_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                img_url = '/uploads/' + filename
+            return render_template('show.html')
     elif request.method == 'GET':
-        media = UPLOAD_FOLDER
+        media = app.config['UPLOAD_FOLDER']
         return render_template('photo.html',media = media)
 
     else:

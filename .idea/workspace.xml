@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01ed43f0-00d2-48d4-8e6a-6f0d70e33f37" name="Default Changelist" comment="bootstrap反映">
-      <change afterPath="$PROJECT_DIR$/templates/edit.html" afterDir="false" />
+    <list default="true" id="01ed43f0-00d2-48d4-8e6a-6f0d70e33f37" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flasker.py" beforeDir="false" afterPath="$PROJECT_DIR$/flasker.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sample.db" beforeDir="false" afterPath="$PROJECT_DIR$/sample.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/photo.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/photo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +33,7 @@
           <entry key="css" value="1" />
           <entry key="db" value="10" />
           <entry key="html" value="5" />
-          <entry key="js" value="1" />
+          <entry key="js" value="2" />
           <entry key="py" value="4" />
           <entry key="sql" value="5" />
         </counts>
@@ -45,7 +43,7 @@
           <entry key="CSS" value="1" />
           <entry key="DBN-SQL" value="1" />
           <entry key="HTML" value="5" />
-          <entry key="JavaScript" value="1" />
+          <entry key="JavaScript" value="2" />
           <entry key="PLAIN_TEXT" value="10" />
           <entry key="Python" value="4" />
           <entry key="SQL" value="4" />
@@ -55,18 +53,18 @@
         <counts>
           <entry key="Python コンソール" value="90" />
           <entry key="db" value="44" />
-          <entry key="html" value="1507" />
-          <entry key="py" value="1471" />
+          <entry key="html" value="1605" />
+          <entry key="py" value="1799" />
           <entry key="sql" value="133" />
-          <entry key="txt" value="16" />
+          <entry key="txt" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="DBN-SQL" value="101" />
-          <entry key="HTML" value="1507" />
-          <entry key="PLAIN_TEXT" value="60" />
-          <entry key="Python" value="1561" />
+          <entry key="HTML" value="1605" />
+          <entry key="PLAIN_TEXT" value="67" />
+          <entry key="Python" value="1889" />
           <entry key="SQL" value="32" />
         </counts>
       </usages-collector>
@@ -78,33 +76,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flasker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="74" column="17" lean-forward="true" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
+            <state relative-caret-position="288">
+              <caret line="93" column="24" lean-forward="true" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
-                <marker date="1539673035429" expanded="true" signature="2299:2513" ph="..." />
+                <marker date="1539746986907" expanded="true" signature="2172:2231" ph="..." />
+                <marker date="1539746986907" expanded="true" signature="2300:2501" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sample.db">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+            <state relative-caret-position="435">
+              <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -121,15 +111,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/show.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
+            <state relative-caret-position="289">
+              <caret line="60" column="117" selection-start-line="60" selection-start-column="117" selection-end-line="60" selection-end-column="117" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/photo.html">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -183,10 +177,10 @@
         <option value="$PROJECT_DIR$/schema01.sql" />
         <option value="$PROJECT_DIR$/schema.sql" />
         <option value="$PROJECT_DIR$/templates/layout.html" />
-        <option value="$PROJECT_DIR$/templates/photo.html" />
         <option value="$PROJECT_DIR$/templates/login.html" />
-        <option value="$PROJECT_DIR$/templates/edit.html" />
+        <option value="$PROJECT_DIR$/templates/photo.html" />
         <option value="$PROJECT_DIR$/templates/show.html" />
+        <option value="$PROJECT_DIR$/templates/edit.html" />
         <option value="$PROJECT_DIR$/flasker.py" />
       </list>
     </option>
@@ -194,7 +188,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="20" />
     <option name="y" value="23" />
-    <option name="width" value="788" />
+    <option name="width" value="793" />
     <option name="height" value="726" />
   </component>
   <component name="ProjectView">
@@ -212,12 +206,12 @@
             </path>
             <path>
               <item name="flasker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flasker" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="外部ライブラリー" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
               <item name="flasker" type="b2602c69:ProjectViewProjectNode" />
               <item name="外部ライブラリー" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6 (flasker) &gt;" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
@@ -294,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539580661202</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="bootstrap反映、編集機能追加">
+      <created>1539673537172</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1539673537172</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -307,21 +308,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="20" y="23" width="788" height="726" extended-state="0" />
+    <frame x="20" y="23" width="793" height="726" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.5018657" side_tool="true" weight="0.17717391" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49813432" visible="true" weight="0.14879356" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49813432" visible="true" weight="0.1677763" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="DB Browser" order="3" />
       <window_info id="Project Explorer" order="4" />
       <window_info id="Job Explorer" order="5" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4994618" weight="0.2803419" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4994618" weight="0.2791798" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50053823" side_tool="true" weight="0.3280757" />
-      <window_info anchor="bottom" id="Python Console" order="2" sideWeight="0.4994618" weight="0.32649574" />
+      <window_info anchor="bottom" id="Python Console" order="2" sideWeight="0.4994618" weight="0.32492113" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.329653" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49838537" visible="true" weight="0.11514196" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49838537" visible="true" weight="0.18454258" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.71282053" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -344,7 +346,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="bootstrap反映" />
-    <option name="LAST_COMMIT_MESSAGE" value="bootstrap反映" />
+    <MESSAGE value="bootstrap反映、編集機能追加" />
+    <option name="LAST_COMMIT_MESSAGE" value="bootstrap反映、編集機能追加" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -362,13 +365,6 @@
     <entry file="file://$PROJECT_DIR$/flasker.db" />
     <entry file="file://$PROJECT_DIR$/del/flaskr.db" />
     <entry file="file://$PROJECT_DIR$/create.sql" />
-    <entry file="file://$PROJECT_DIR$/static/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/schema01.sql" />
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/werkzeug/serving.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -393,9 +389,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/flaskr.db" />
     <entry file="file://$PROJECT_DIR$/samle.db" />
-    <entry file="file://$PROJECT_DIR$/templates/photo.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -417,20 +410,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/show.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/schema.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -438,14 +417,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/photo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/flasker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="74" column="17" lean-forward="true" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
+        <state relative-caret-position="288">
+          <caret line="93" column="24" lean-forward="true" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
-            <marker date="1539673035429" expanded="true" signature="2299:2513" ph="..." />
+            <marker date="1539746986907" expanded="true" signature="2172:2231" ph="..." />
+            <marker date="1539746986907" expanded="true" signature="2300:2501" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/show.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="60" column="117" selection-start-line="60" selection-start-column="117" selection-end-line="60" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
         </state>
       </provider>
     </entry>
