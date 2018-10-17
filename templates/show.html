@@ -1,9 +1,11 @@
 {% extends "layout.html" %}
 {% block content %}
+  <link rel="stylesheet" type="text/css" href="static/stylesheet.css">
 <div class="page">
 
   {% if session.logged_in %}
     <div class="panel panel-info">
+        <h2>投稿フォーム</h2>
     <form action="{{ url_for('add_entry') }}" method="post" enctype="multipart/form-data">
         <div class="form-group">
           <label for="title"><h4>タイトル</h4></label>
@@ -22,7 +24,7 @@
     <div class="panel panel-info">
     <form method="post" action="{{ url_for('image_entry') }}" enctype="multipart/form-data">
       <div class="form-group">
-        <label for="img_file"><h4>画像</h4></label>
+        <label for="img_file"><h3>画像投稿フォーム</h3></label>
         <input type="file" id="img_file" name="img_file" class="col-sm-4">
       </div>
       <div class="form-group">
@@ -43,6 +45,7 @@
 
 <div class="panel panel-primary" align="center">
   <tr class="entries">
+      <h2>投稿一覧</h2>
   {% for entry in entries %}
     <table border="1">
             <tr><th><h3 align="center">{{ entry.id }}</h3></th></tr>
@@ -58,7 +61,7 @@
       </form>
           </div>
           <div class="btn-group">
-      <form action="{{ url_for('edit',post_id = entry.id) }}" method="GETT">
+      <form action="{{ url_for('edit',post_id = entry.id) }}" method="GET">
           <button type="submit" class="btn btn-success">
           <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 編集</button>
       </form>

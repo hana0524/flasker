@@ -87,12 +87,12 @@ def delete_entry(post_id):
     return redirect(url_for('show'))
 
 
-@app.route('/edit/<int:post_id>',methods=['GET','POST'])
+@app.route('/edit/<post_id>',methods=['GET','POST'])
 def edit(post_id):
     if request.method == 'GET':
         cur = g.db.execute('select id,title, text from entries where id=' +post_id)
         entries = [dict(id=row[0],title=row[1], text=row[2]) for row in cur.fetchall()]
-        return render_template('edit.html',entries = entries)
+        return render_template('edit.html',entries = entries,post_id = post_id)
     if request.method == 'POST':
         g.db.execute('update entries set title= ?,text= ? where id = ?',
                     ([request.form['title'], request.form['text'],post_id]))
@@ -112,7 +112,7 @@ def image_entry():
                 filename = secure_filename(img_file.filename)
                 img_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                 img_url = '/uploads/' + filename
-            return render_template('show.html')
+            return render_template('show.html',img_file = img_file)
     elif request.method == 'GET':
         media = app.config['UPLOAD_FOLDER']
         return render_template('photo.html',media = media)
@@ -130,12 +130,12 @@ def login():
     error = None
     if request.method == 'POST':
         if request.form['username'] != app.config['USERNAME']:
-            error = u'ユーザ名が間違っています'
+            error = 'ユーザ名が間違っています'
         elif request.form['password'] != app.config['PASSWORD']:
-            error = u'パスワードが間違っています'
+            error = 'パスワードが間違っています'
         else:
             session['logged_in'] = True
-            flash(u'ログインしました')
+            flash('ログインしました')
             return redirect(url_for('show'))
     return render_template('login.html', error=error)
 
