@@ -58,7 +58,7 @@
       </form>
           </div>
           <div class="btn-group">
-      <form action="{{ url_for('edit_show',post_id = entry.id,title = entry.title,text = entry.text) }}" method="POST">
+      <form action="{{ url_for('edit',post_id = entry.id) }}" method="GETT">
           <button type="submit" class="btn btn-success">
           <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 編集</button>
       </form>

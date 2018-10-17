@@ -86,17 +86,18 @@ def delete_entry(post_id):
         print("erro")
     return redirect(url_for('show'))
 
-@app.route('/edit_show/<int:post_id>',methods=['POST'])
-def edit_show(post_id):
-    target = post_id
-    return render_template('edit.html',post_id = target)
 
-@app.route('/edit/<int:post_id>',methods=['POST'])
+@app.route('/edit/<int:post_id>',methods=['GET','POST'])
 def edit(post_id):
-    g.db.execute('update entries set title= ?,text= ? where id = ?',
-                ([request.form['title'], request.form['text'],post_id]))
-    g.db.commit()
-    return redirect(url_for('show'))
+    if request.method == 'GET':
+        cur = g.db.execute('select id,title, text from entries where id=' +post_id)
+        entries = [dict(id=row[0],title=row[1], text=row[2]) for row in cur.fetchall()]
+        return render_template('edit.html',entries = entries)
+    if request.method == 'POST':
+        g.db.execute('update entries set title= ?,text= ? where id = ?',
+                    ([request.form['title'], request.form['text'],post_id]))
+        g.db.commit()
+        return redirect(url_for('show'))
 
 
 
