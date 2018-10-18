@@ -4,6 +4,7 @@ import sqlite3
 from contextlib import closing
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash, send_from_directory
 from werkzeug import secure_filename
+import matplotlib.pyplot as plt
 
 DATABASE = 'sample.db'
 DEBUG = True
@@ -61,7 +62,10 @@ def teardown_request(exception):
 def show():
     cur = g.db.execute('select id, title, text from entries order by id asc')
     entries = [dict(id = row[0] ,title=row[1], text=row[2]) for row in cur.fetchall()]
+
+
     return render_template('show.html', entries=entries)
+
 
 
 # エントリー追加
@@ -105,20 +109,18 @@ def edit(post_id):
 @app.route('/image_entry', methods=['GET', 'POST'])
 def image_entry():
     if request.method == 'POST':
-        if not session.get('logged_in'):
-            abort(401)
             img_file = request.files['img_file']
             if img_file and allowed_file(img_file.filename):
                 filename = secure_filename(img_file.filename)
                 img_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                 img_url = '/uploads/' + filename
-            return render_template('show.html',img_file = img_file)
+                return render_template('show.html', media=img_url)
     elif request.method == 'GET':
-        media = app.config['UPLOAD_FOLDER']
-        return render_template('photo.html',media = media)
+
+        return render_template('photo.html')
 
     else:
-        return redirect(url_for('menu'))
+        return redirect(url_for('show'))
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
@@ -144,7 +146,7 @@ def login():
 @app.route('/logout')
 def logout():
     session.pop('logged_in', None)
-    flash(u'ログアウトしました')
+    flash('ログアウトしました')
     return redirect(url_for('show'))
 
 
