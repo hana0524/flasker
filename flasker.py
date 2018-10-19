@@ -62,8 +62,6 @@ def teardown_request(exception):
 def show():
     cur = g.db.execute('select id, title, text from entries order by id asc')
     entries = [dict(id = row[0] ,title=row[1], text=row[2]) for row in cur.fetchall()]
-
-
     return render_template('show.html', entries=entries)
 
 

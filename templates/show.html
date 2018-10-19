@@ -8,17 +8,19 @@
     <div class="panel panel-info">
         <h2>&emsp;投稿フォーム</h2>
     <form action="{{ url_for('add_entry') }}" method="post" enctype="multipart/form-data">
-        <div class="form-group">
-          <label for="title"><h4>&emsp;タイトル</h4></label>
-          &emsp;<input type="text" class="form-control" name="title" size="10">
+        <input class="form-group">
+        <div>
+          <label ><h4>&emsp;タイトル</h4></label>
+            &emsp;<input type="text" class="form-control" name="title" size="10">
         </div>
         <div class="form-group">
-          <label for="text"><h4>&emsp;本文</h4></label>
+          <label><h4>&emsp;本文</h4></label>
           &emsp;<textarea name="text" class="form-control" cols="10" rows=8></textarea>
         </div>
         <div class="form-group">
         &emsp;<button type="submit" class="btn btn-primary">
-          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 投稿</button></div>
+          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 投稿</button>
+        </div>
     </form>
     </div>
 
@@ -32,10 +34,11 @@
           &emsp;<button type="submit" class="btn btn-primary">
           <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 送信</button>
       </div>
-        <p><img src="{{ media }}"></p>
+
     </form>
 
     </div>
+    <p><img src="/Users/hanadatomomi/PycharmProjects/flasker/media/1.png"></p>
 
     <form method="get" action="{{ url_for('image_entry') }}" enctype="multipart/form-data">
       <div>&emsp;<button type="submit" class="btn btn-primary">
@@ -44,7 +47,6 @@
 
 
 <br>
-
 <div class="panel panel-primary" align="center" >
   <tr class="entries">
       <h2>記事一覧</h2>
@@ -59,9 +61,9 @@
       <form action="{{ url_for('delete_entry',post_id = entry.id) }}" method="POST">
        <button type="submit" class="btn btn-danger">
           <span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span> 削除</button>
-      </form>
-          </div>
-          <div class="btn-group">
+      </form></div>
+
+              <div class="btn-group">
       <form action="{{ url_for('edit',post_id = entry.id) }}" method="GET">
           <button type="submit" class="btn btn-success">
           <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 編集</button>
