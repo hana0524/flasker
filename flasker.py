@@ -2,9 +2,13 @@
 import os
 import sqlite3
 from contextlib import closing
+
+import lob as lob
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash, send_from_directory
+from pip._internal import commands
 from werkzeug import secure_filename
 import matplotlib.pyplot as plt
+import glob
 
 DATABASE = 'sample.db'
 DEBUG = True
@@ -111,11 +115,13 @@ def image_entry():
             if img_file and allowed_file(img_file.filename):
                 filename = secure_filename(img_file.filename)
                 img_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                img_url = '/uploads/' + filename
+                img_url = '/uploads/' + + filename
                 return render_template('show.html', media=img_url)
     elif request.method == 'GET':
-
-        return render_template('photo.html')
+        all = [r.split('/')[-1] for r in glob.glob('media/*')]
+        for i in all:
+            img = print(i)
+        return render_template('photo.html',all=all,img=img)
 
     else:
         return redirect(url_for('show'))

@@ -5,11 +5,18 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-<h1>未完成</h1>
-<h4>現在投稿はありません。</h4>
 
-<p><img src="{{ image }}"></p>
+<h2>投稿画像一覧</h2>
+      {% if session.logged_in %}
+
+        {% for img in all %}
+            <p><img src="/uploads/{{ img }}"></p>
+
+        {% endfor %}
+    {% else %}
+      <th>現在、投稿はありません。</th>
+    {% endif %}
+
 
 
     <form method="get" action="{{ url_for('show') }}" enctype="multipart/form-data">
