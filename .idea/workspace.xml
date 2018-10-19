@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01ed43f0-00d2-48d4-8e6a-6f0d70e33f37" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flasker.py" beforeDir="false" afterPath="$PROJECT_DIR$/flasker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/png" beforeDir="false" afterPath="$PROJECT_DIR$/media/png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/show.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,12 +21,13 @@
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.22" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.25" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="2" />
+          <entry key="css" value="3" />
           <entry key="db" value="10" />
           <entry key="html" value="7" />
           <entry key="js" value="4" />
@@ -39,7 +38,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="2" />
+          <entry key="CSS" value="3" />
           <entry key="DBN-SQL" value="1" />
           <entry key="HTML" value="7" />
           <entry key="Image" value="8" />
@@ -52,9 +51,9 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python コンソール" value="90" />
-          <entry key="css" value="1" />
+          <entry key="css" value="2" />
           <entry key="db" value="44" />
-          <entry key="html" value="2305" />
+          <entry key="html" value="2337" />
           <entry key="py" value="2295" />
           <entry key="sql" value="133" />
           <entry key="txt" value="64" />
@@ -62,9 +61,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="1" />
+          <entry key="CSS" value="2" />
           <entry key="DBN-SQL" value="101" />
-          <entry key="HTML" value="2305" />
+          <entry key="HTML" value="2337" />
           <entry key="PLAIN_TEXT" value="108" />
           <entry key="Python" value="2385" />
           <entry key="SQL" value="32" />
@@ -81,60 +80,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flasker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="63" column="12" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="12" />
+            <state relative-caret-position="287">
+              <caret line="64" column="11" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
                 <marker date="1539911025608" expanded="true" signature="2103:2106" ph="..." />
-                <marker date="1539911025608" expanded="true" signature="2494:2711" ph="..." />
-                <marker date="1539911025608" expanded="true" signature="3328:3330" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/show.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="52" column="18" lean-forward="true" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+            <state relative-caret-position="15">
+              <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
               <folding>
                 <element signature="e#222#228#0" expanded="true" />
-                <element signature="e#390#396#0" expanded="true" />
-                <element signature="e#426#432#0" expanded="true" />
-                <element signature="e#575#581#0" expanded="true" />
-                <element signature="e#607#613#0" expanded="true" />
-                <element signature="e#747#753#0" expanded="true" />
-                <element signature="e#1110#1116#0" expanded="true" />
-                <element signature="e#1275#1281#0" expanded="true" />
-                <element signature="e#1568#1574#1" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#tr#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#pre#0;n#th#0;n#tr#1;n#table#0;n#tr#0;n#pre#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#1;n#pre#0;n#th#0;n#tr#1;n#table#0;n#tr#0;n#pre#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#pre#0;n#td#0;n#tr#2;n#table#0;n#tr#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#1;n#pre#0;n#td#0;n#tr#2;n#table#0;n#tr#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#400#406#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/stylesheet.css">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/edit.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="480">
-              <caret line="32" column="11" lean-forward="true" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
+              <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/media/1.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/media/dog_akitainu.png">
-          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -146,11 +126,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/layout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+            <state relative-caret-position="90">
+              <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -193,12 +173,12 @@
         <option value="$PROJECT_DIR$/schema01.sql" />
         <option value="$PROJECT_DIR$/schema.sql" />
         <option value="$PROJECT_DIR$/templates/login.html" />
-        <option value="$PROJECT_DIR$/static/stylesheet.css" />
         <option value="$PROJECT_DIR$/templates/photo.html" />
-        <option value="$PROJECT_DIR$/templates/layout.html" />
         <option value="$PROJECT_DIR$/templates/edit.html" />
         <option value="$PROJECT_DIR$/flasker.py" />
+        <option value="$PROJECT_DIR$/static/stylesheet.css" />
         <option value="$PROJECT_DIR$/templates/show.html" />
+        <option value="$PROJECT_DIR$/templates/layout.html" />
       </list>
     </option>
   </component>
@@ -220,6 +200,11 @@
             <path>
               <item name="flasker" type="b2602c69:ProjectViewProjectNode" />
               <item name="flasker" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flasker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flasker" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flasker" type="b2602c69:ProjectViewProjectNode" />
@@ -357,7 +342,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.5018657" side_tool="true" weight="0.17717391" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49813432" visible="true" weight="0.19916143" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49813432" visible="true" weight="0.2033543" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="DB Browser" order="3" />
       <window_info id="Project Explorer" order="4" />
@@ -368,7 +353,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.329653" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.46214512" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49838537" visible="true" weight="0.18454258" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49838537" visible="true" weight="0.18454258" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.71282053" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -476,27 +461,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/stylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/photo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/media/peki.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -506,52 +470,55 @@
     <entry file="file://$PROJECT_DIR$/media/9.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/media/dog_akitainu.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/templates/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/media/1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/edit.html">
+    <entry file="file://$PROJECT_DIR$/media/dog_akitainu.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/photo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="11" lean-forward="true" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
+        <state relative-caret-position="210">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/flasker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="63" column="12" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="12" />
+        <state relative-caret-position="287">
+          <caret line="64" column="11" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
             <marker date="1539911025608" expanded="true" signature="2103:2106" ph="..." />
-            <marker date="1539911025608" expanded="true" signature="2494:2711" ph="..." />
-            <marker date="1539911025608" expanded="true" signature="3328:3330" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/stylesheet.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/show.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="52" column="18" lean-forward="true" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+        <state relative-caret-position="15">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
           <folding>
             <element signature="e#222#228#0" expanded="true" />
-            <element signature="e#390#396#0" expanded="true" />
-            <element signature="e#426#432#0" expanded="true" />
-            <element signature="e#575#581#0" expanded="true" />
-            <element signature="e#607#613#0" expanded="true" />
-            <element signature="e#747#753#0" expanded="true" />
-            <element signature="e#1110#1116#0" expanded="true" />
-            <element signature="e#1275#1281#0" expanded="true" />
-            <element signature="e#1568#1574#1" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#tr#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#pre#0;n#th#0;n#tr#1;n#table#0;n#tr#0;n#pre#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#1;n#pre#0;n#th#0;n#tr#1;n#table#0;n#tr#0;n#pre#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#pre#0;n#td#0;n#tr#2;n#table#0;n#tr#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#1;n#pre#0;n#td#0;n#tr#2;n#table#0;n#tr#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#400#406#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
         </state>
       </provider>
     </entry>
