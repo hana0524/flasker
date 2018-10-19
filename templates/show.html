@@ -1,14 +1,13 @@
 {% extends "layout.html" %}
 {% block content %}
-<link rel="stylesheet" href="static/stylesheet.css" crossorigin="anonymous">
 
 <div class="page">
 
   {% if session.logged_in %}
     <div class="panel panel-info">
-        <h2>&emsp;投稿フォーム</h2>
+        <h2>&emsp;テキスト投稿フォーム</h2>
     <form action="{{ url_for('add_entry') }}" method="post" enctype="multipart/form-data">
-        <input class="form-group">
+        <div class="form-group">
         <div>
           <label ><h4>&emsp;タイトル</h4></label>
             &emsp;<input type="text" class="form-control" name="title" size="10">
@@ -21,6 +20,7 @@
         &emsp;<button type="submit" class="btn btn-primary">
           <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 投稿</button>
         </div>
+        </div>
     </form>
     </div>
 
@@ -30,7 +30,6 @@
         <label for="img_file"><h3>&emsp;画像投稿フォーム</h3></label><br>
         <input type="file" id="img_file" name="img_file" class="col-sm-4">
       </div><br>
-      <div class="form-group">
           &emsp;<button type="submit" class="btn btn-primary">
           <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 送信</button>
       </div>
@@ -44,6 +43,7 @@
       <div>&emsp;<button type="submit" class="btn btn-primary">
         <span class="glyphicon" aria-hidden="true"></span> 画像一覧</button></div>
     </form>
+      <div class="form-group">
 
 
 <br>
