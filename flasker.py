@@ -2,12 +2,8 @@
 import os
 import sqlite3
 from contextlib import closing
-
-import lob as lob
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash, send_from_directory
-from pip._internal import commands
 from werkzeug import secure_filename
-import matplotlib.pyplot as plt
 import glob
 
 DATABASE = 'sample.db'
@@ -30,12 +26,9 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
 
-
-# DB周り
 # DB接続
 def connect_db():
     return sqlite3.connect(app.config['DATABASE'])
-
 
 # DBの初期化
 def init_db():
@@ -45,12 +38,10 @@ def init_db():
             c.executescript(f.read())
         db.commit()
 
-
 # リクエストに対する前処理
 @app.before_request
 def before_request():
     g.db = connect_db()
-
 
 # リクエストに対する後処理
 @app.teardown_request
@@ -59,7 +50,6 @@ def teardown_request(exception):
     if db is not None:
         db.close()
 
-
 # View
 # エントリーページ
 @app.route('/')
@@ -67,8 +57,6 @@ def show():
     cur = g.db.execute('select id, title, text from entries order by id asc')
     entries = [dict(id = row[0] ,title=row[1], text=row[2]) for row in cur.fetchall()]
     return render_template('show.html', entries=entries)
-
-
 
 # エントリー追加
 @app.route('/add', methods=['POST'])
@@ -82,7 +70,6 @@ def add_entry():
     flash(u'投稿が追加されました')
     return redirect(url_for('show'))
 
-
 @app.route('/delete_entry/<post_id>', methods=['POST'])
 def delete_entry(post_id):
     try:
@@ -91,7 +78,6 @@ def delete_entry(post_id):
     except Exception:
         print("erro")
     return redirect(url_for('show'))
-
 
 @app.route('/edit/<post_id>',methods=['GET','POST'])
 def edit(post_id):
@@ -105,8 +91,6 @@ def edit(post_id):
         g.db.commit()
         return redirect(url_for('show'))
 
-
-
 # 画像アップロード
 @app.route('/image_entry', methods=['GET', 'POST'])
 def image_entry():
@@ -115,16 +99,22 @@ def image_entry():
             if img_file and allowed_file(img_file.filename):
                 filename = secure_filename(img_file.filename)
                 img_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                img_url = '/uploads/' + + filename
+                img_url = '/uploads/' + filename
                 return render_template('show.html', media=img_url)
     elif request.method == 'GET':
-        all = [r.split('/')[-1] for r in glob.glob('media/*')]
-        for i in all:
-            img = print(i)
-        return render_template('photo.html',all=all,img=img)
+        all_img = [r.split('/')[-1] for r in glob.glob('media/*.png')]
+        for i in all_img:
+            print(i)
+        return render_template('photo.html',all_img=all_img)
 
     else:
         return redirect(url_for('show'))
+
+@app.route('/image_delete/<path>',methods=['POST'])
+def image_delete(path):
+    rename = './media/' + path
+    os.remove(rename)
+    return redirect(url_for('image_entry'))
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
@@ -144,7 +134,6 @@ def login():
             flash('ログインしました')
             return redirect(url_for('show'))
     return render_template('login.html', error=error)
-
 
 # ログアウト
 @app.route('/logout')

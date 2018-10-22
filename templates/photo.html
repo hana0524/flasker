@@ -1,21 +1,27 @@
 {% extends "layout.html" %}
 {% block content %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
 
 <h2>投稿画像一覧</h2>
       {% if session.logged_in %}
+        {% for image in all_img %}
+        <div class="panel panel-primary" align="center" >
 
-        {% for img in all %}
-            <p><img src="/uploads/{{ img }}"></p>
+            <table style="width:50%;" frame="box">
+            <p><img src="/uploads/{{ image }}" width="50%" height="20%"></p>
+                <form action="{{ url_for('image_delete',path = image) }}" method="POST">
+                    <button type="submit" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span> 削除</button>
+                </form>
+            </table>
 
+
+        </div>
         {% endfor %}
-    {% else %}
-      <th>現在、投稿はありません。</th>
-    {% endif %}
+            {% else %}
+                <th>現在、投稿はありません。</th>
+            {% endif %}
+
+
 
 
 
