@@ -28,7 +28,7 @@
 
         </form>
     </div>
-    <p><img src="/uploads/sample03.jpg" width="100%" hight="10%"></p>
+    <p align="center"><img src="/uploads/sample03.jpg" width="100%" hight="10%"></p>
     <div class="panel panel-info">
     <form method="post" action="{{ url_for('image_entry') }}" enctype="multipart/form-data">
       <div class="form-group">
@@ -59,9 +59,9 @@
       <h2>記事一覧</h2>
   {% for entry in entries %}
     <table style="width:80%;" frame="box" bordercolor="#FFFFFF">
-        <tr><th><pre align="center" style="background-color: #81BEF7"><h3>{{ entry.id }}</h3></pre></th></tr>
-        <tr><th><pre style="background-color: #CEECF5;" style="width:100%;"><h3>{{ entry.title }}</h3></pre></th></tr>
-        <tr><td><pre style="background-color: #CEE3F6;" style="width:100%;"><h5>{{ entry.text|safe }}</h5></pre></td></tr>
+        <tr><th><pre align="center" style="background-color: #E0ECF8"><h3>{{ entry.id }}</h3></pre></th></tr>
+        <tr><th><pre style="background-color: #CEE3F6;" style="width:100%;"><b><h3>{{ entry.title }}</h3></b></pre></th></tr>
+        <tr><td><pre style="background-color: #CEF6F5;" style="width:100%;"><h4>{{ entry.text|safe }}</h4></pre></td></tr>
         <div class="btn-toolbar">
       <tr><td>
           <div class="btn-group">
