@@ -103,8 +103,8 @@ def image_entry():
                 return render_template('show.html', media=img_url)
     elif request.method == 'GET':
         all_img = [r.split('/')[-1] for r in glob.glob('media/*.png')]
-        for i in all_img:
-            print(i)
+        #for i in all_img:
+            #print(i)
         return render_template('photo.html',all_img=all_img)
 
     else:
@@ -131,7 +131,7 @@ def login():
             error = 'パスワードが間違っています'
         else:
             session['logged_in'] = True
-            flash('ログインしました')
+            flash('　　　　　ログインしました')
             return redirect(url_for('show'))
     return render_template('login.html', error=error)
 
@@ -139,7 +139,7 @@ def login():
 @app.route('/logout')
 def logout():
     session.pop('logged_in', None)
-    flash('ログアウトしました')
+    flash('　　　　　ログアウトしました')
     return redirect(url_for('show'))
 
 

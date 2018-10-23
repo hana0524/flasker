@@ -1,52 +1,68 @@
 {% extends "layout.html" %}
+<link rel="stylesheet" type="text/css" href="/static/style.css">
 {% block content %}
 
 <div class="page">
 
   {% if session.logged_in %}
-    <div class="panel panel-info">
-        <h2>&emsp;テキスト投稿フォーム</h2>
+    <div class="panel panel-info" align="center">
+        <h2 >&emsp;テキスト投稿フォーム</h2>
         <form action="{{ url_for('add_entry') }}" method="post">
-                <form class="form-inline">
+            <table style="width:100%;" frame="box" bordercolor="#FFFFFF">
+                <tr>
                 <div class="form-group">
-                    <label class="col-md-2"><h4>タイトル</h4></label>
-                        <div class="col-sm-5" class="input-group">
-                        <input type="text" class="form-control" name="title">
+                    <th><label class="col-sm-6 col-md-6 col-lg-6 control-label"><h4>&emsp;タイトル</h4></label></th>
+                    <th>
+                        <div class="col-sm-10 col-md-10 col-lg-10">
+                        <input type="text" name="title" autocomplete="title" class="form-control" placeholder="タイトル" />
                         </div>
+                    </th>
                 </div>
-                </form>
+                </tr>
+                <tr>
                 <div class="form-group">
-                     <label class="col-md-2 control-label"><h4>&emsp;本文</h4></label>
-                        <div class="col-sm-5">
-                            <textarea name="text" class="form-control" rows="5"></textarea>
+                    <th><label class="col-sm-6 col-md-6 col-lg-6 control-label"><h4>&emsp;本文</h4></label></th>
+                    <th>
+                        <div class="col-sm-10 col-md-10 col-lg-10">
+                            <textarea name="text" class="form-control" rows="5" id="text" placeholder="本文" ></textarea>
                         </div>
-                </div><br>
-                <div class="form-group">
-                  <button type="submit" class="btn btn-primary">
-                      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 投稿</button>
+                    </th>
                 </div>
-
+                </tr><br>
+                <tr>
+                <div class="form-group">
+                  <td>
+                    &emsp;
+                      <button type="submit" class="btn btn-primary">
+                      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"> 投稿</span></button><br>
+                  </td>
+                </div>
+                </tr>
+            </table>
         </form>
     </div>
+
     <p align="center"><img src="/uploads/sample03.jpg" width="100%" hight="10%"></p>
+
     <div class="panel panel-info">
-    <form method="post" action="{{ url_for('image_entry') }}" enctype="multipart/form-data">
-      <div class="form-group">
-        <label for="img_file"><h3>&emsp;&emsp;画像投稿フォーム</h3></label><br>
-        <input type="file" id="img_file" name="img_file" class="col-sm-4">
-      </div><br>
-          &emsp;<button type="submit" class="btn btn-primary">
-          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 送信</button>
-    </form><br>
+        <form method="post" action="{{ url_for('image_entry') }}" enctype="multipart/form-data">
+            <tr>
+            <div class="form-group">
+                <th><label for="img_file"><h3>&emsp;&emsp;画像投稿フォーム</h3></label></th><br><br>
+                <td><input type="file" id="img_file" name="img_file" class="col-sm-4"><br></td>
+            </div><br>
+                <td>&emsp;<button type="submit" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> 送信</button></td>
+            </tr>
+        </form><br>
     </div>
-</div>
 
 
     <table class="table-responsive">
     <form method="get" action="{{ url_for('image_entry') }}" enctype="multipart/form-data">
       <div>
          &emsp;<button type="submit" class="btn btn-primary">
-        <span class="glyphicon" aria-hidden="true"></span> 画像一覧</button></div>
+          <span class="glyphicon" aria-hidden="true"></span>画像一覧へ</button></div>
     </form>
     </table>
 
@@ -54,14 +70,14 @@
 
 <br>
 <p><img src="/uploads/sample02.jpg" width="100%" hight="10%"></p>
-<div class="table-responsive" align="center" >
+<div class="panel panel-info" align="center" >
   <tr class="entries">
       <h2>記事一覧</h2>
   {% for entry in entries %}
     <table style="width:80%;" frame="box" bordercolor="#FFFFFF">
         <tr><th><pre align="center" style="background-color: #E0ECF8"><h3>{{ entry.id }}</h3></pre></th></tr>
-        <tr><th><pre style="background-color: #CEE3F6;" style="width:100%;"><b><h3>{{ entry.title }}</h3></b></pre></th></tr>
-        <tr><td><pre style="background-color: #CEF6F5;" style="width:100%;"><h4>{{ entry.text|safe }}</h4></pre></td></tr>
+        <tr><th><pre style="background-color: #CEE3F6;" style="width:100%;"><b><h4>{{ entry.title }}</h4></b></pre></th></tr>
+        <tr><td><pre style="background-color: #E0F8F7;" style="width:100%;"><h5>{{ entry.text|safe }}</h5></pre></td></tr>
         <div class="btn-toolbar">
       <tr><td>
           <div class="btn-group">
@@ -87,4 +103,6 @@
   {% endif %}
 </div>
 <br>
+
+
 {% endblock %}

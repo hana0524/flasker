@@ -1,17 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<h2>投稿画像一覧</h2>
+<h1 class="myFont" align="center">投稿画像一覧</h1><br>
       {% if session.logged_in %}
         {% for image in all_img %}
         <div class="panel panel-primary" align="center" >
 
-            <table style="width:50%;" frame="box">
+            <table style="width:50%;" frame="box"><br>
             <p><img src="/uploads/{{ image }}" width="50%" height="20%"></p>
                 <form action="{{ url_for('image_delete',path = image) }}" method="POST">
                     <button type="submit" class="btn btn-danger">
-                    <span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span> 削除</button>
-                </form>
+                    <span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span> 削除</button><br>
+                </form><br>
+
             </table>
 
 

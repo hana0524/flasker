@@ -4,21 +4,31 @@
 <meta charset="utf-8">
   <meta name="viewport" content="width=20, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
   </head>
 
   <body>
 <div class="page">
-  <p class="text-right"><a href="{{ url_for('show') }}"><h1>Flask-tutorial</h1></a></p>
   <div class="metanav">
   {% if not session.logged_in %}
-    <a href="{{ url_for('login') }}">ログイン</a>
+    <a href="{{ url_for('login') }}"><h4 class="text-right">ログイン</h4></a>
   {% else %}
-    <p class="text-right"><a href="{{ url_for('logout') }}">ログアウト</a></p>
+    <p><a href="{{ url_for('logout') }}"><h4 class="text-right">ログアウト</h4></a></p>
   {% endif %}
   </div>
-  <p align="center"><img src="/uploads/sample01.jpg" width="90%" hight="30%"></p>
+
+<div style="position: relative;">
+  <p align="center"><img src="/uploads/sample01.jpg" width="80%" hight="30%"></p>
+    <div style="position:absolute; top:50px; left:70px; width: 430px;">
+      <p class="text-right">
+        <a href="{{ url_for('show') }}">
+          <h1 align="center" class="myFont">Flask-tutorial</h1></a>
+    </div>
+</div>
+
   {% for message in get_flashed_messages() %}
-    <div class="flash">{{ message }}</div>
+  <div class="flash"><h3>{{ message }}</h3></div>
   {% endfor %}
 </div>
 
